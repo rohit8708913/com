@@ -1,19 +1,6 @@
-#    This file is part of the CompressorBot distribution.
-#    Copyright (c) 2021 Danish_00
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, version 3.
-#
-#    This program is distributed in the hope that it will be useful, but
-#    WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-#    General Public License for more details.
-#
-#    License can be found in < https://github.com/1Danish-00/CompressorBot/blob/main/License> .
-
-from .worker import *
-
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import Button
+from datetime import datetime as dt
 
 async def up(event):
     if not event.is_private:
@@ -25,16 +12,16 @@ async def up(event):
     p = f"🌋Pɪɴɢ = {ms}ms"
     await event.reply(v + "\n" + p)
 
-
 async def start(event):
     ok = await event.client(GetFullUserRequest(event.sender_id))
+    user_first_name = ok.user.first_name  # Accessing the user attribute correctly
     await event.reply(
-        f"Hi `{ok.user.first_name}`\nThis is A CompressorBot Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too.",
+        f"Hi `{user_first_name}`\nThis is A CompressorBot Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too.",
         buttons=[
             [Button.inline("HELP", data="ihelp")],
             [
-                Button.url("SOURCE CODE", url="github.com/1Danish-00/CompressorBot"),
-                Button.url("DEVELOPER", url="t.me/danish_00"),
+                Button.url("SOURCE CODE", url="https://github.com/1Danish-00/CompressorBot"),
+                Button.url("DEVELOPER", url="https://t.me/danish_00"),
             ],
         ],
     )
@@ -61,7 +48,7 @@ async def beck(event):
             [Button.inline("HELP", data="ihelp")],
             [
                 Button.url("SOURCE CODE", url="github.com/1Danish-00/"),
-                Button.url("DEVELOPER", url="t.me/danish_00"),
+                Button.url("DEVELOPER", url="t.me/rohit_1888"),
             ],
         ],
     )
