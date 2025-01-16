@@ -1,5 +1,5 @@
 from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import Button
+from .worker import *
 from datetime import datetime as dt
 
 async def up(event):
