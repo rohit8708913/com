@@ -21,7 +21,7 @@ async def start(event):
             [Button.inline("HELP", data="ihelp")],
             [
                 Button.url("SOURCE CODE", url="https://github.com/1Danish-00/CompressorBot"),
-                Button.url("DEVELOPER", url="https://t.me/danish_00"),
+                Button.url("DEVELOPER", url="https://t.me/rohit_1888"),
             ],
         ],
     )
